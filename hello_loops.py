@@ -1,3 +1,10 @@
+def simple_for_loop():
+    print('Counting from 5 to 1')
+    for number in [5, 4, 3, 2, 1]:
+        print('Number -', number)
+    print('Done')
+
+
 def even_or_odd(n: int = 5):
     print("Even or odd?")
     for i in range(n):
