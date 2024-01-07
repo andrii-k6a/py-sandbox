@@ -5,6 +5,14 @@ def simple_for_loop():
     print('Done')
 
 
+def iterate_over_list():
+    names = ['Charles', 'Andrii', 'Mary']
+    print('Iterating over list:', names)
+    for name in names:
+        print('Hello', name)
+    print('Done')
+
+
 def even_or_odd(n: int = 5):
     print("Even or odd?")
     for i in range(n):
