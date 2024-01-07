@@ -3,6 +3,7 @@ def simple_for_loop():
     for number in [5, 4, 3, 2, 1]:
         print('Number -', number)
     print('Done')
+# simple_for_loop()
 
 
 def iterate_over_list():
@@ -11,6 +12,22 @@ def iterate_over_list():
     for name in names:
         print('Hello', name)
     print('Done')
+# iterate_over_list()
+
+
+def smallest_number(numbers: list):
+    smallest = None
+    print(smallest)
+    print(type(smallest))
+
+    for number in numbers:
+        if smallest is None:
+            smallest = number
+        elif number < smallest:
+            smallest = number
+
+    return smallest
+# print(smallest_number([1, 4, -4, 6, 3, -8, 3, 19, 1]))
 
 
 def even_or_odd(n: int = 5):
@@ -21,6 +38,7 @@ def even_or_odd(n: int = 5):
         else:
             print(i, "- odd")
     print("Done")
+# even_or_odd(7)
 
 
 def from_n_to_zero(n: int = 5):
@@ -29,6 +47,7 @@ def from_n_to_zero(n: int = 5):
         print('Current number is', n)
         n = n - 1
     print('Done')
+# from_n_to_zero(10)
 
 
 def repeater():
@@ -40,6 +59,6 @@ def repeater():
             break
         print(line)
     print('Goodbye!')
-
+# repeater()
 
 
