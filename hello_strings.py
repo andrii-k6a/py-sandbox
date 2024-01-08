@@ -21,3 +21,12 @@ def print_text_len():
     print(text)
     print('The length of the text is', len(text))
 
+
+def iterate_over_string():
+    text = 'hello world'
+    index = 0
+    while index < len(text):
+        symbol = text[index]
+        print(index, symbol)
+        index = index + 1
+
