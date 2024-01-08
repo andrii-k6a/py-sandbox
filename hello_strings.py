@@ -30,3 +30,11 @@ def iterate_over_string():
         print(index, symbol)
         index = index + 1
 
+
+def iterate_over_string_2():
+    text = 'hello world'
+    index = 0
+    for symbol in text:
+        print(index, symbol)
+        index = index + 1
+
