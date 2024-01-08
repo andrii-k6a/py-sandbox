@@ -103,6 +103,19 @@ def string_methods():
     greet = 'Hello Bob!'
     greet_lower = greet.lower()
     print(greet_lower)
+    print(greet.find('Bob'))
+    print(greet.find('Steven'))
+
+    # it does not change the original object
+    greet_replace = greet.replace('Bob', 'Jane')
+    print(greet)
+    print(greet_replace)
+    # it replaces all, not only the first one
+    print(greet.replace('o', 'X'))
+
+    print('    Left strip'.lstrip())
+    print('Right strip!    '.rstrip())
+    print('    Strip!    '.strip())
 
     # Show attributes of an object
     print(dir(greet))
