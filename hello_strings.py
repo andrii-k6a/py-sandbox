@@ -89,6 +89,7 @@ def is_banana(word: str):
     else:
         print('No, it is not a banana')
 
+    # lexicographic compression
     if 'banana' > word:
         print('Bigger than banana')
     else:
