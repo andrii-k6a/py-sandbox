@@ -74,6 +74,7 @@ def slicing():
 
 def in_as_logical_operator():
     fruit = 'apple'
+    # it's like 'contains', also could be used with lists
     if 'app' in fruit:
         print('It contains app')
     if 'ple' in fruit:
