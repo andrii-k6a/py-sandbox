@@ -38,3 +38,12 @@ def iterate_over_string_2():
         print(index, symbol)
         index = index + 1
 
+
+def letter_frequency(letter: str, text: str) -> int:
+    count = 0
+    for symbol in text:
+        if symbol == letter:
+            count = count + 1
+    return count
+# print('The result is', letter_frequency('o', 'hello world'))
+
