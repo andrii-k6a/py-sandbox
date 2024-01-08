@@ -78,5 +78,6 @@ def in_as_logical_operator():
         print('It contains app')
     if 'ple' in fruit:
         print('It contains ple')
+    print('q' in fruit)
     print('Done')
 
