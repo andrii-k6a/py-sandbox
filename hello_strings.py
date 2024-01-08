@@ -82,3 +82,19 @@ def in_as_logical_operator():
     print('q' in fruit)
     print('Done')
 
+
+def is_banana(word: str):
+    if 'banana' == word:
+        print('Yes, it is a banana!')
+    else:
+        print('No, it is not a banana')
+
+    if 'banana' > word:
+        print('Bigger than banana')
+    else:
+        print('Lower than banana')
+# is_banana('banana')
+# is_banana('HELLO')
+# is_banana('hello')
+
+
