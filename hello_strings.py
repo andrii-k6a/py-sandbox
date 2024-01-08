@@ -47,3 +47,18 @@ def letter_frequency(letter: str, text: str) -> int:
     return count
 # print('The result is', letter_frequency('o', 'hello world'))
 
+
+def slicing():
+    text = 'How to slice a string into slices?'
+    # first arg - start index, second arg - last index, but not including
+    print(text[0:3])
+    print(text[4:6])
+    print(text[7:12])
+    print(text[15:21])
+
+    print('*** No tracebacks examples ***')
+    print(text[10:5])
+    index_out_the_len = len(text) + 3
+    print(text[15:index_out_the_len])
+
+
