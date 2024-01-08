@@ -1,3 +1,10 @@
+def concatenation():
+    hello = 'hello'
+    world = 'world'
+    msg = hello + '_' + world + '!'
+    print(msg)
+
+
 def string_and_number_concatenation():
     message = 'the number is '
     number = 42
