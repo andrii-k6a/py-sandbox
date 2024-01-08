@@ -49,16 +49,19 @@ def letter_frequency(letter: str, text: str) -> int:
 
 
 def slicing():
-    text = 'How to slice a string into slices?'
+    text = 'Hello World'
     # first arg - start index, second arg - last index, but not including
-    print(text[0:3])
-    print(text[4:6])
-    print(text[7:12])
-    print(text[15:21])
+    print(text[0:2])
+    print(text[:2])
+    print(text[6:9])
+    print(text[6:])
+    print(text[:])
 
     print('*** No tracebacks examples ***')
+    # empty result
     print(text[10:5])
-    index_out_the_len = len(text) + 3
-    print(text[15:index_out_the_len])
+
+    # print to the end of the string
+    print(text[1:333])
 
 
