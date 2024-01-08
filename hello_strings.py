@@ -72,3 +72,11 @@ def slicing():
     print(text[1:333])
 
 
+def in_as_logical_operator():
+    fruit = 'apple'
+    if 'app' in fruit:
+        print('It contains app')
+    if 'ple' in fruit:
+        print('It contains ple')
+    print('Done')
+
