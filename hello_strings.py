@@ -99,3 +99,11 @@ def is_banana(word: str):
 # is_banana('hello')
 
 
+def string_methods():
+    greet = 'Hello Bob!'
+    greet_lower = greet.lower()
+    print(greet_lower)
+
+    # Show attributes of an object
+    print(dir(greet))
+
