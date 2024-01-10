@@ -32,3 +32,11 @@ def print_max_and_min_of_word(word):
 
 
 print_max_and_min_of_word('FUN')
+
+
+def assign_void_func():
+    void = print('What if assign void func to a var?...')
+    print('It would be', void)
+
+
+assign_void_func()
