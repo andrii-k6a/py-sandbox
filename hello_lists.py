@@ -54,3 +54,90 @@ def another_iteration_example():
         print('Bye', name)
 
 
+def concatenating_lists():
+    a = [1, 2, 3]
+    b = [99, 88, 77]
+    c = a + b
+    print(a)
+    print(b)
+    print('Concatenating result', c)
+
+
+def slice_list():
+    l = [99, 11, 88, 77, 42]
+    print("Initial list:", l)
+
+    # work the same way as for strings
+    print('l[1:3] -', l[1:3])
+    print('l[2:4] -', l[2:4])
+    print('l[1:] -', l[1:])
+    print('l[:2] -', l[:2])
+    print('l[1:333] -', l[1:333])
+    print('l[:333] -', l[:333])
+    print('l[333:] -', l[333:])
+    print('l[333:333] -', l[333:333])
+    print('l[:] -', l[:])
+
+
+def list_exploration():
+    just_list = list()
+    # <class 'list'>
+    print(type(just_list))
+    print(dir(just_list))
+
+
+def building_list():
+    stuff = list()
+    print(stuff)
+
+    stuff.append('phone')
+    stuff.append(42)
+    print(stuff)
+
+    stuff.append('umbrella')
+    print(stuff)
+
+
+def check_if_list_contains():
+    values = ['dog', 4, 31, 5.0, 'banana', [1, 0, 1]]
+    print('Initial values:', values)
+
+    if 'banana' in values:
+        print('There is a banana')
+
+    if 'cat' not in values:
+        print('There is no cats')
+
+    if [1, 0, 1] in values:
+        print('Huh, there is a list in a list...')
+
+
+def sort_lists():
+    nums = [7, 1, -3, 15, 23, 22, 15]
+    print('Initial:', nums)
+    nums.sort()
+    print('Sorted:', nums)
+
+    names = ['Mary', 'Andy', 'Susan', 'Max']
+    print('Initial:', names)
+    names.sort()
+    print('Sorted:', names)
+
+    # Cannot sort mixed list...
+    # TypeError: '<' not supported between instances of 'int' and 'str'
+    mixed = ['Mary', 2, 'Andy', 'Max', 3.5, 'Susan', -1]
+    print('Initial:', mixed)
+    # mixed.sort()
+
+
+def functions_for_lists():
+    nums = [7, 3, 7, 1, -5, 0]
+    print('Initial:', nums)
+    print('len', len(nums))
+    print('max', max(nums))
+    print('min', min(nums))
+    print('sum', sum(nums))
+    print('sum/len', sum(nums) / len(nums))
+
+
+functions_for_lists()
