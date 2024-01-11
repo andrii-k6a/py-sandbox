@@ -14,4 +14,16 @@ def hello_dictionary():
     print(bag)
 
 
-hello_dictionary()
+def dictionary_declaration():
+    person = {'name': 'Cindy', 'age': 25, 'address': {'city': 'NY', 'country': 'US'}}
+    print('Person type:', type(person))
+    print(person)
+
+    # {} is the same as dict()
+    empty = {}
+    print('Empty dictionary type:', type(empty))
+    print(empty)
+    empty['some key'] = 333
+    print(empty)
+
+
