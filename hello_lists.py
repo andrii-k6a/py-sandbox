@@ -140,4 +140,22 @@ def functions_for_lists():
     print('sum/len', sum(nums) / len(nums))
 
 
-functions_for_lists()
+def split_string_to_list():
+    # intentionally added extra spaces
+    text = 'Welcome to    my world!'
+    words = text.split()
+    print(words)
+    print('Number of words', len(words))
+    print('First word -', words[0])
+
+    for word in words:
+        print(word.upper(), end=", ")
+    print('\nDone')
+
+
+def split_string_to_list_with_semicolon():
+    text = 'Welcome;to;my;world'
+    print('Split by space', text.split())
+    print('Split by semicolon', text.split(';'))
+
+
