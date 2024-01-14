@@ -79,6 +79,15 @@ def slice_list():
     print('l[:] -', l[:])
 
 
+def start_stop_step_slicing():
+    nums = [111, 222, 333, 444, 555, 666, 777, 888, 999]
+    print(nums)
+
+    # name[start_including : stop_not_including : step]
+    print('nums[1:7:2] -', nums[1:7:2])
+    print('nums[::2] -', nums[::2])
+
+
 def list_exploration():
     just_list = list()
     # <class 'list'>
