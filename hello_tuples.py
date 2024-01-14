@@ -68,4 +68,11 @@ def tuples_are_comparable():
     print('Done')
 
 
-tuples_are_comparable()
+def tuple_concatenation():
+    a = (1, 2, 3)
+    b = (4, 5)
+    c = ('c', 'b', 'a')
+    print(a + b + c)
+
+
+
