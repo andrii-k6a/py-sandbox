@@ -26,6 +26,7 @@ def smallest_number(numbers: list):
 
     return smallest
 
+
 # print(smallest_number([1, 4, -4, 6, 3, -8, 3, 19, 1]))
 
 
@@ -68,5 +69,27 @@ def loop_scope():
         # i and j are accessible here
         print(k, i, j)
 
+
+def key_value_iteration():
+    data = {'banana': 10, 'apple': 3, 'strawberry': 23, 'dmt': 777}
+    for k, v in data.items():
+        print('Key:', k, 'Value:', v)
+
+
+def enumerate_list():
+    nums = [10, -15, 20, -25, 30, -35, 40, -45, 50]
+    print(nums)
+
+    for index, value in enumerate(nums):
+        print(index, value)
+
+
+def group_with_zip():
+    l1 = [1, 3, 5, 7]
+    l2 = ['a', 'c', 'a', 'b']
+    l3 = ['q1', 'q2', 'x0', 'x1']
+
+    for a, b, c in zip(l1, l2, l3):
+        print('abc:', a, b, c)
 
 
