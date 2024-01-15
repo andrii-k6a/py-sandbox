@@ -132,4 +132,19 @@ def iterate_over_sorted_dict():
     print('Done')
 
 
+def sort_dict_by_value():
+    d = {'c': 10, 'a': 333, 'd': 99, 'b': 0, 'e': 333, 'f': 1000, 'g': 100}
+    print(d)
+
+    tuples_list = list()
+    for k, v in d.items():
+        tuples_list.append((v, k))
+    print(tuples_list)
+
+    r1 = sorted(tuples_list)
+    print('Sorted -', r1)
+    r2 = sorted(tuples_list, reverse=True)
+    print('Reverse -', r2)
+
+
 
