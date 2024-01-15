@@ -147,4 +147,34 @@ def sort_dict_by_value():
     print('Reverse -', r2)
 
 
+def top5_words():
+    poem = open('resources/poem.txt')
+    count_dict = dict()
+
+    # counting words
+    for line in poem:
+        words = line.split()
+        for word in words:
+            if word.endswith('.') or word.endswith(','):
+                word = word[:len(word) - 1]
+            count_dict[word] = count_dict.get(word, 0) + 1
+    print(count_dict)
+
+    # converting from key-value to value-key to sort by value
+    tuple_list = list()
+    for k, v in count_dict.items():
+        tuple_list.append((v, k))
+    print(tuple_list)
+
+    # reverse sorting to find top 5 words
+    result = sorted(tuple_list, reverse=True)
+    print(result)
+
+    print('*** Top 5 words ***')
+    i = 0
+    for v, k in result[:5]:
+        i += 1
+        print('Number', i, '-', k, '-', v)
+
+
 
