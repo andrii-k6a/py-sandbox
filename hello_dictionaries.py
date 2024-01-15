@@ -114,4 +114,22 @@ def most_frequent_word():
     print(big_word, big_count)
 
 
+def sorting_items_in_dict():
+    d = {'c': 10, 'a': 333, 'd': 99, 'b': 0}
+    print(d.items())
+
+    # since keys are unique in dict, tuples in dict are sorted by keys no matter what value is
+    sorted_items = sorted(d.items())
+    print(sorted_items)
+
+
+def iterate_over_sorted_dict():
+    d = {'c': 10, 'a': 333, 'd': 99, 'b': 0}
+    print(d)
+
+    for k, v in sorted(d.items()):
+        print(k, v)
+    print('Done')
+
+
 

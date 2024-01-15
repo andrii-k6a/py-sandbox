@@ -68,11 +68,20 @@ def tuples_are_comparable():
     print('Done')
 
 
+def sorting_list_of_tuples():
+    list_of_tuples = [('c', 10), ('a', 333), ('d', 99), ('b', 0)]
+    print(list_of_tuples)
+
+    # does not sort the source list, but provides a new sorted one
+    sorted_list_of_tuples = sorted(list_of_tuples)
+    print(list_of_tuples)
+    print(sorted_list_of_tuples)
+
+
 def tuple_concatenation():
     a = (1, 2, 3)
     b = (4, 5)
     c = ('c', 'b', 'a')
     print(a + b + c)
-
 
 
