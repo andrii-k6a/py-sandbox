@@ -147,6 +147,13 @@ def sort_dict_by_value():
     print('Reverse -', r2)
 
 
+def sort_dict_by_value_but_shorter():
+    d = {'c': 10, 'a': 333, 'd': 99, 'b': 0, 'e': 333, 'f': 1000, 'g': 100}
+    print(d)
+    # list comprehension
+    print(sorted([(v, k) for k, v in d.items()]))
+
+
 def top5_words():
     poem = open('resources/poem.txt')
     count_dict = dict()
@@ -175,6 +182,3 @@ def top5_words():
     for v, k in result[:5]:
         i += 1
         print('Number', i, '-', k, '-', v)
-
-
-
