@@ -168,3 +168,33 @@ def split_string_to_list_with_semicolon():
     print('Split by semicolon', text.split(';'))
 
 
+def list_comprehension():
+    numbers = [10, 11, 12, 13, 14, 15]
+    print(numbers)
+
+    # A Python list comprehension consists of brackets containing the expression,
+    # which is executed for each element along with the for loop to iterate over each element in the Python list.
+
+    # Syntax: newList = [expression(element) for element in iterable if condition]
+    # Parameter:
+    # expression: Represents the operation you want to execute on every item within the iterable.
+    # element: The term “variable” refers to each value taken from the iterable.
+    # iterable: specify the sequence of elements you want to iterate through.(e.g., a list, tuple, or string).
+    # condition: (Optional) A filter helps decide whether or not an element should be added to the new list.
+    # The return value is a new list containing the modified elements that satisfy the given criteria.
+    doubled = [n * 2 for n in numbers]
+    print(doubled)
+
+    doubled_even = [n * 2 for n in numbers if n % 2 == 0]
+    print(doubled_even)
+
+    # same logic without list comprehension
+    result = list()
+    for n in numbers:
+        if n % 2 == 0:
+            n = n * 2
+            result.append(n)
+    print(result)
+
+
+
