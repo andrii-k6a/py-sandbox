@@ -197,4 +197,15 @@ def list_comprehension():
     print(result)
 
 
+def copy_with_list_comprehension():
+    numbers = [10, 11, 12, 13, 14, 15]
+    print(numbers)
+
+    copy = [i for i in numbers]
+    print(copy)
+
+    print('== ?', numbers == copy)
+    print('is ?', numbers is copy)
+
+
 
