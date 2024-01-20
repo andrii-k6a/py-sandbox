@@ -85,3 +85,16 @@ def tuple_concatenation():
     print(a + b + c)
 
 
+def nested_tuple():
+    nested = (((1, 2), 'hey', '3'), ('q', 13, 'b'), ('3', 33, 333))
+    print(nested)
+    print(type(nested))
+
+    for a, b, c in nested:
+        print('*** TUPLE ***')
+        print(a)
+        print(b)
+        print(c)
+
+
+
