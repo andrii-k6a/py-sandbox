@@ -79,4 +79,18 @@ def fine_tuning_string_extraction():
     print(email_with_parentheses)
 
 
+def find_email_hosts():
+    text = 'From: hello@python.org - Subject: Regex. CC: hello@world.com'
+    print(text)
+
+    all_hosts = re.findall('@([^ ]*)', text)
+    print('All hosts:', all_hosts)
+
+    sender_host = re.findall('^From: .+?@([^ ]*)', text)
+    print('Sender host:', sender_host)
+
+    cc_host = re.findall('Subject: .+?CC: .+?@([^ ]*)', text)
+    print('CC host:', cc_host)
+
+
 
