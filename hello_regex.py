@@ -93,4 +93,28 @@ def find_email_hosts():
     print('CC host:', cc_host)
 
 
+def max_price():
+    data = [
+        'The price - 42.10101$',
+        'The price - 7$',
+        'The price - 100.01$',
+        'The price - 199.99$ now',
+        'The price - 999',
+        'This is number - 111$',
+        'The price - -5$',
+    ]
 
+    numbers = list()
+    for data_item in data:
+        # notice the escaping of the dollar sign with double backward slashes at the end
+        # it does not require the line to be ended
+        value = re.findall('^The price - ([0-9.]+)\\$', data_item)
+        if len(value) > 0:
+            number = float(value[0])
+            numbers.append(number)
+
+    print(numbers)
+    print('The highest price is ', max(numbers))
+
+
+max_price()
