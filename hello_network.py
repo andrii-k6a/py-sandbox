@@ -17,6 +17,8 @@ def simple_http_request():
     print('***** START RECEIVING RESPONSE *****')
     buffer_size = 256
     data = s.recv(buffer_size)
+    # data : bytes
+    # print('Data Type:', type(data))
     print(data.decode())
 
     while len(data) > 0:
