@@ -55,6 +55,24 @@ def letter_frequency(letter: str, text: str) -> int:
 # print('The result is', letter_frequency('o', 'hello world'))
 
 
+def char_numeric_representation():
+    # ASCII - American Standard Code for Information Interchange - represents chars by numbers between 0 and 127(8 bits)
+    # Unicode - a complex character set for all chars - not efficient to use for sending data across network, too large
+    # UTF-8 / UTF-16 / etc. - subsets of Unicode to optimize memory efficiency (UTF-32 - almost full Unicode)
+    # UTF-8 is best practice for data exchange across internet and its upwards compatible with ASCII
+
+    # Since Python 3, all strings are represented by str type (same as unicode).
+    # In Python 2 there were str and separate unicode type ( x = u'文' ) to represent chars
+    # Also, in Python 2 and 3 strings might be represented by byte array ( x = b"abc" ) with some differences
+
+    # Each char in a string is represented by number
+    print('H -', ord('H'))
+    print('E -', ord('E'))
+    print('L -', ord('L'))
+    print('L -', ord('L'))
+    print('O -', ord('O'))
+
+
 def slicing():
     text = 'Hello World'
     # first arg - start index, second arg - last index, but not including
