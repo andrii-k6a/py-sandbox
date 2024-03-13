@@ -47,3 +47,8 @@ def list_json():
         print(user)
         print(type(user))
 
+
+def print_pretty_json():
+    data = {"name": "Henry", "dob": {"month": "June", "year": 1999}, "hobbies": ["football", "science"]}
+    print(data)
+    print(json.dumps(data, indent=4))  # print pretty json
