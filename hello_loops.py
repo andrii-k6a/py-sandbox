@@ -93,3 +93,15 @@ def group_with_zip():
         print('abc:', a, b, c)
 
 
+def print_first_even(nums: list) -> None:
+    for num in nums:
+        if num % 2 == 0:
+            print('Found even number', num)
+            break
+    else:
+        # the block is being executed only if break was not hit in the loop body
+        print('No even number')
+
+
+# print_first_even([1, 3, 7, 9])
+# print_first_even([1, 3, 42, 9])
