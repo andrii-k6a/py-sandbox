@@ -40,3 +40,10 @@ def nested_func_example():
 
     return magic_number_adder
 
+
+def func_as_arg(func):
+    magic_number = func(58)
+    print(magic_number)
+
+
+# func_as_arg(add_magic_number)
