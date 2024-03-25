@@ -15,15 +15,6 @@ def fibonacci(n: int):
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 
-print('Start')
-print_greetings()
-print("The number is", add_magic_number(7))
-print("The number is", add_magic_number())
-# Cannot call functions that defined below
-# print_max_and_min_of_word('Hello')
-print('Done')
-
-
 def print_max_and_min_of_word(word):
     for symbol in word:
         print(symbol)
@@ -31,12 +22,21 @@ def print_max_and_min_of_word(word):
     print('Min -', min(word))
 
 
-print_max_and_min_of_word('FUN')
+# print_max_and_min_of_word('FUN')
 
 
 def assign_void_func():
     void = print('What if assign void func to a var?...')
-    print('It would be', void)
+    print('It would be', void)  # None
 
 
-assign_void_func()
+def nested_func_example():
+    def add42(x: int):
+        return x + 42
+
+    magic_number_adder = add42  # function could be assigned to a variable
+    print(type(magic_number_adder))  # <class 'function'>
+    print(magic_number_adder(58))
+
+    return magic_number_adder
+
