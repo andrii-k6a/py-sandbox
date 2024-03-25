@@ -12,6 +12,7 @@ g1.hello()
 g1.hello()
 Greetings.hello(g1)
 print(type(g1))
+print(dir(g1))
 
 g2 = Greetings()
 g2.hello()
