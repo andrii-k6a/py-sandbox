@@ -48,7 +48,7 @@ def names_histogram(names: list):
 
 
 def count_words():
-    poem_file = open('resources/poem.txt')
+    poem_file = open('../resources/poem.txt')
     word_to_counter = dict()
 
     for line in poem_file:
@@ -96,7 +96,7 @@ def key_value_iteration():
 
 
 def most_frequent_word():
-    poem_file = open('resources/poem.txt')
+    poem_file = open('../resources/poem.txt')
     word_to_counter = dict()
 
     for line in poem_file:
@@ -155,7 +155,7 @@ def sort_dict_by_value_but_shorter():
 
 
 def top5_words():
-    poem = open('resources/poem.txt')
+    poem = open('../resources/poem.txt')
     count_dict = dict()
 
     # counting words
