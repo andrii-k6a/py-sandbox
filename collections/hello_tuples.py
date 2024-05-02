@@ -11,6 +11,13 @@ def simple_tuple():
     print(max(t))
 
 
+def single_tuple():
+    t1 = ('hello')   # string
+    t2 = ('world',)  # tuple with a single value
+    print(type(t1), t1)
+    print(type(t2), t2)
+
+
 def tuples_are_immutable():
     t = (5, 4, 3)
     print(t)
