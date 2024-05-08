@@ -27,4 +27,6 @@ select_people_sql = 'SELECT email, age FROM People ORDER BY age DESC LIMIT 10'
 for row in cur.execute(select_people_sql):
     print(row)  # row is a tuple
 
+cur.close()
+conn.close()
 print('Goodbye!')
