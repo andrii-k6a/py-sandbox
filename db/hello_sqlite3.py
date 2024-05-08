@@ -23,4 +23,8 @@ while input('Do you want to add a user? (yes/no) ') == 'yes':
 
     conn.commit()
 
+select_people_sql = 'SELECT email, age FROM People ORDER BY age DESC LIMIT 10'
+for row in cur.execute(select_people_sql):
+    print(row)  # row is a tuple
+
 print('Goodbye!')
