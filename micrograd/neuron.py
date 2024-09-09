@@ -19,13 +19,7 @@ x1w1x2w2 = x1w1 + x2w2; x1w1x2w2.label = 'x1*w1 + x2*w2'
 n = x1w1x2w2 + b; n.label = 'n'
 o = n.tanh(); o.label = 'o'
 
-o.grad = 1.0
-o._backward()
-n._backward()
-b._backward()
-x1w1x2w2._backward()
-x2w2._backward()
-x1w1._backward()
+o.backward()
 
 dot = draw_dot(o)
 dot.render('neuron-graph', format='png')  # Save the graph as a PNG file

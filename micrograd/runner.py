@@ -16,14 +16,7 @@ f = Value(-2.0, label='f')
 G = e * f  # -8.0; G = (a*b + c) * f = a*b*f + c*f
 G.label = 'G'
 
-G.grad = 1.0
-G._backward()
-f._backward()
-e._backward()
-d._backward()
-c._backward()
-b._backward()
-a._backward()
+G.backward()
 
 print(G)
 print(G._prev)
