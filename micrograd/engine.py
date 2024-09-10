@@ -16,6 +16,7 @@ class Value:
         return f"{self.label or "Value"}={self.data}"
 
     def __add__(self, other):
+        other = other if isinstance(other, Value) else Value(other)  # wrap other as Value if it's a number - Value(3)+2
         out = Value(self.data + other.data, (self, other), '+')
 
         def _backward():
@@ -25,7 +26,11 @@ class Value:
         out._backward = _backward
         return out
 
+    def __radd__(self, other):  # other + self : 2 + Value(3) where self is Value(3)
+        return self + other
+
     def __mul__(self, other):
+        other = other if isinstance(other, Value) else Value(other)  # wrap other as Value if it's a number - Value(3)*2
         out = Value(self.data * other.data, (self, other), '*')
 
         def _backward():
@@ -34,6 +39,9 @@ class Value:
 
         out._backward = _backward
         return out
+
+    def __rmul__(self, other):  # other * self : 2 * Value(3) where self is Value(3)
+        return self * other
 
     def tanh(self):
         x = self.data
