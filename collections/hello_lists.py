@@ -233,4 +233,16 @@ def list_comprehension_to_flatten_list():
     print(res)
 
 
+def list_comprehension_to_flatten_3d_list():
+    three_d = [
+        [[1, 2], [3, 4]],
+        [[5, 6], [7, 8]],
+        [[9], [0]]
+    ]
+    flat_list = [item for table in three_d for row in table for item in row]
+
+    # [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+    print(flat_list)
+
+
 
