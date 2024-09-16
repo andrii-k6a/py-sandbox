@@ -16,6 +16,7 @@ def trace(root):
     return nodes, edges
 
 
+# Make sure you have graphviz installed locally to draw graphs: https://graphviz.org/download/
 def draw_dot(root):
     dot = Digraph(format='svg', graph_attr={'rankdir': 'LR'})  # LR = left to right
 

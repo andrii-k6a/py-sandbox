@@ -1,4 +1,4 @@
-from micrograd.engine import Value
+from ai.micrograd.engine import Value
 
 print((Value(5) + 1) * 5)
 print(2 * Value(3))

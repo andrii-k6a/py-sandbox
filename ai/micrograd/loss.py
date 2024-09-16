@@ -1,8 +1,10 @@
-from micrograd.nn import MLP
-from micrograd.viewer import draw_dot
+from ai.micrograd.nn import MLP
+from ai.micrograd.viewer import draw_dot
+
+mlp = MLP(3, [4, 4, 1])
 
 x = [2.0, 3.0, -1.0]
-mlp = MLP(3, [4, 4, 1])
+y = mlp(x)
 
 xs = [
     [2.0, 3.0, -1.0],

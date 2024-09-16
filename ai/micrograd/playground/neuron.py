@@ -1,5 +1,5 @@
-from micrograd.engine import Value
-from micrograd.viewer import draw_dot
+from ai.micrograd.engine import Value
+from ai.micrograd.viewer import draw_dot
 
 # inputs x1,x2
 x1 = Value(2.0, label='x1')
