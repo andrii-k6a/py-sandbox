@@ -208,4 +208,29 @@ def copy_with_list_comprehension():
     print('is ?', numbers is copy)
 
 
+def nested_list_comprehension():
+    # Syntax: new_list = [[expression for item in list] for item in list]
+    matrix = [[j for j in range(5)] for i in range(5)]
+
+    # [[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]
+    print(matrix)
+
+
+def list_comprehension_to_flatten_list():
+    # second for-loop acts in similar way as if statement does
+    flat_list = [item for row in [[1, 4, "ac"], [8, 9], [0, "ab"]] for item in row]
+
+    # [1, 4, 'ac', 8, 9, 0, 'ab']
+    print(flat_list)
+
+    # the same but longer
+    res = []
+    for row in [[1, 4, "ac"], [8, 9], [0, "ab"]]:
+        for item in row:
+            res.append(item)
+
+    # [1, 4, 'ac', 8, 9, 0, 'ab']
+    print(res)
+
+
 
