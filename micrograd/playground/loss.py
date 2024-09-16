@@ -12,14 +12,16 @@ xs = [
 ]
 ys = [1.0, -1.0, -1.0, 1.0]
 ypred = [mlp(x) for x in xs]
-print(ypred)
+print('Predictions', ypred)
 
 loss = sum([(yout - ygt) ** 2 for ygt, yout in zip(ys, ypred)])
-print(loss)
+print('Loss', loss)
 
 loss.backward()
 
-print(mlp.layers[0].neurons[0].w[0].grad)
+print('Grad value example', mlp.layers[0].neurons[0].w[0].grad)
 
-dot = draw_dot(loss)
-dot.render('loss', format='png')
+draw_dot(loss).render('loss', format='png')
+
+mlp_parameters = mlp.parameters()
+print(f'All {len(mlp_parameters)} NN parameters (weights and biases)', mlp_parameters)
