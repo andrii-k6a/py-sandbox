@@ -17,8 +17,7 @@ for k in range(100):
     loss = sum([(yout - ygt) ** 2 for ygt, yout in zip(ys, ypred)])
 
     # zero grad and backward pass
-    for p in mlp.parameters():
-        p.grad = 0
+    mlp.zero_grad()
     loss.backward()
 
     # step size
