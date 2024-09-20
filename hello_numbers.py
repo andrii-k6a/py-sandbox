@@ -10,3 +10,15 @@ print(10.0 / 2.0)
 print(10 / 2)
 print(9 / 2)
 print(99 / 100)
+
+print("\n*** True is 1 ***")
+print("True + 5 = ", True + 5) # 6
+print("True - 5 = ", True - 5) # -4
+print("True * 5 = ", True * 5) # 5
+print("True / 5 = ", True / 5) # 0.2
+
+print("\n*** False is 0 ***")
+print("False + 5 = ", False + 5) # 5
+print("False - 5 = ", False - 5) # -5
+print("False * 5 = ", False * 5) # 0
+print("False / 5 = ", False / 5) # 0.0
