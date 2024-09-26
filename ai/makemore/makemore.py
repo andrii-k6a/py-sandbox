@@ -1,3 +1,5 @@
+import torch
+
 # FIXME: names.txt contains duplicate names
 words = open('names.txt', 'r').read().splitlines()
 
@@ -30,3 +32,33 @@ def simple_bigram():
     # print the items of the bigram dictionary sorted by the value (bigram counter) in descending order
     for item in sorted(b.items(), key=lambda kv: -kv[1]):
         print(item)
+
+
+def tensor_bigram():
+    # join all words into a single string, then keep only the unique chars of the string in alphabetical order
+    chars = sorted(list(set(''.join(words))))
+
+    # string (char) to index mapping
+    stoi = {s: i for i, s in enumerate(chars)}
+    stoi['<S>'] = 26
+    stoi['<E>'] = 27
+    print(stoi)
+
+    dim = len(chars) + 2
+    assert dim == 28 # Tensor dimension should be 28 = 26 alphabet chars + 2 special start/end symbols
+
+    # N is a tensor - a two-dimensional array initially filled with zeros
+    N = torch.zeros((dim, dim), dtype=torch.int32)
+
+    for w in words:
+        chs = ['<S>'] + list(w) + ['<E>']
+        for ch1, ch2, in zip(chs, chs[1:]):
+            ix1 = stoi[ch1]
+            ix2 = stoi[ch2]
+
+            N[ix1, ix2] += 1
+
+    print(N)
+
+
+tensor_bigram()
