@@ -1,4 +1,5 @@
 import torch
+import matplotlib.pyplot as plt
 
 # FIXME: names.txt contains duplicate names
 words = open('names.txt', 'r').read().splitlines()
@@ -44,8 +45,12 @@ def tensor_bigram():
     stoi['<E>'] = 27
     print(stoi)
 
+    # string (char) to index mapping
+    itos = {i: s for s, i in stoi.items()}
+    print(itos)
+
     dim = len(chars) + 2
-    assert dim == 28 # Tensor dimension should be 28 = 26 alphabet chars + 2 special start/end symbols
+    assert dim == 28  # Tensor dimension should be 28 = 26 alphabet chars + 2 special start/end symbols
 
     # N is a tensor - a two-dimensional array initially filled with zeros
     N = torch.zeros((dim, dim), dtype=torch.int32)
@@ -58,7 +63,15 @@ def tensor_bigram():
 
             N[ix1, ix2] += 1
 
-    print(N)
+    plt.figure(figsize=(16, 16))
+    plt.imshow(N, cmap='Blues')
+    for i in range(dim):
+        for j in range(dim):
+            chstr = itos[i] + itos[j]
+            plt.text(j, i, chstr, ha="center", va="bottom", color='gray')
+            plt.text(j, i, N[i, j].item(), ha="center", va="top", color='gray')
+    plt.axis('off')
+    plt.show()
 
 
 tensor_bigram()
