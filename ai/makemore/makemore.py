@@ -46,3 +46,35 @@ for i in range(dim):
         plt.text(j, i, N[i, j].item(), ha="center", va="top", color='gray')
 plt.axis('off')
 plt.show()
+
+# bigram names generator
+g = torch.Generator().manual_seed(2147483647)
+names = []
+
+# generate N names
+for i in range(10):
+
+    # zero row in tensor is probability distribution of letters a name starts with
+    ix = 0
+    name = ''
+
+    while True:
+        # get probability distribution
+        p = N[ix].float()
+
+        # normalize probability distribution
+        p = p / p.sum()
+
+        # random index of the probability distribution array
+        ix = torch.multinomial(p, num_samples=1, replacement=True, generator=g).item()
+
+        # zero column in tensor is probability distribution of letters a name ends with
+        if ix == 0:
+            break
+
+        # add next char to a name
+        name += itos[ix]
+
+    names.append(name)
+
+print(names)
