@@ -88,6 +88,7 @@ def three_dim_tensor():
 
     sum_dim0_kd = torch.sum(tensor, dim=0, keepdim=True)
     print('torch.sum(tensor, dim=0, keepdim=True\n', sum_dim0_kd, '\n')
+    # shape: (1, 4, 5)
     # tensor([[[63, 66, 69, 72, 75],
     #          [78, 81, 84, 87, 90],
     #          [93, 96, 99, 102, 105],
@@ -95,12 +96,14 @@ def three_dim_tensor():
 
     sum_dim1_kd = torch.sum(tensor, dim=1, keepdim=True)
     print('torch.sum(tensor, dim=1, keepdim=True)\n', sum_dim1_kd, '\n')
+    # # shape: (3, 1, 5)
     # tensor([[[34, 38, 42, 46, 50]],
     #         [[114, 118, 122, 126, 130]],
     #         [[194, 198, 202, 206, 210]]])
 
     sum_dim2_kd = torch.sum(tensor, dim=2, keepdim=True)
     print('torch.sum(tensor, dim=2, keepdim=True)\n', sum_dim2_kd, '\n')
+    # shape: (3, 4, 1)
     # tensor([[[15],
     #          [40],
     #          [65],
