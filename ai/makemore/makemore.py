@@ -10,11 +10,9 @@ chars = sorted(list(set(''.join(words))))
 # string (char) to index mapping (placing a special start/end symbol at index zero, and shifting all other by 1)
 stoi = {s: i + 1 for i, s in enumerate(chars)}
 stoi['.'] = 0  # represents start or end of a word
-print(stoi)
 
 # index to string (char) mapping
 itos = {i: s for s, i in stoi.items()}
-print(itos)
 
 dim = len(chars) + 1
 assert dim == 27  # Tensor dimension should be 27 = 26 alphabet chars + 1 special symbols for start/end
@@ -47,6 +45,10 @@ for i in range(dim):
 plt.axis('off')
 plt.show()
 
+# normalized probability distribution
+P = N.float()
+P /= P.sum(dim=1, keepdim=True)
+
 # bigram names generator
 g = torch.Generator().manual_seed(2147483647)
 names = []
@@ -60,10 +62,7 @@ for i in range(10):
 
     while True:
         # get probability distribution
-        p = N[ix].float()
-
-        # normalize probability distribution
-        p = p / p.sum()
+        p = P[ix]
 
         # random index of the probability distribution array
         ix = torch.multinomial(p, num_samples=1, replacement=True, generator=g).item()
