@@ -46,7 +46,8 @@ plt.axis('off')
 plt.show()
 
 # normalized probability distribution
-P = N.float()
+# Also, added a constant of 1 to prevent zero probabilities, which would result in infinite log values
+P = (N + 1).float()
 P /= P.sum(dim=1, keepdim=True)
 
 # bigram names generator
