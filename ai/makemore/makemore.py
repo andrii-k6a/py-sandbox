@@ -77,3 +77,29 @@ for i in range(10):
     names.append(name)
 
 print(names)
+
+# Likelihood is the product of probabilities (Search for: Maximum Likelihood Estimation)
+log_likelihood = 0.0
+n = 0.0
+
+for w in words:
+    chs = ['.'] + list(w) + ['.']
+    for ch1, ch2, in zip(chs, chs[1:]):
+        ix1 = stoi[ch1]
+        ix2 = stoi[ch2]
+        prob = P[ix1, ix2]
+
+        # Log-likelihood simplifies computation by turning the product of probabilities into a sum, preventing numerical
+        # underflow and making optimization easier while still leading to the same parameter estimates as likelihood:
+        # log(a*b*c) = log(a) + log(b) + log(c)
+        logprob = torch.log(prob)
+        log_likelihood += logprob
+        n += 1
+        # print(f'{ch1}{ch2} : {prob:.4f} : {logprob:.4f}')
+
+print(f'{log_likelihood=}')
+
+# negative log likelihood aligns with loss function semantics - the lower value, the better
+nll = -log_likelihood
+print(f'{nll=}')
+print(f'normalized (average instead of sum) loss = {nll / n}')
